@@ -3,30 +3,29 @@ function play(playerChoice) {
     const choices = ["Rock", "Paper", "Scissors"];
 
     const computerChoice =
-        choices[Math.floor(Math.random() * 3)];
+        choices[Math.floor(Math.random() * choices.length)];
 
     let result = "";
 
     if (playerChoice === computerChoice) {
-        result = "Draw!";
+        result = "🤝 Draw!";
     }
     else if (
         (playerChoice === "Rock" && computerChoice === "Scissors") ||
         (playerChoice === "Paper" && computerChoice === "Rock") ||
         (playerChoice === "Scissors" && computerChoice === "Paper")
     ) {
-        result = "You Win!";
+        result = "🎉 You Win!";
     }
     else {
-        result = "Computer Wins!";
+        result = "😢 You Lose!";
     }
 
     document.getElementById("playerChoice").innerText =
-        "You: " + playerChoice;
+        "Your Choice: " + playerChoice;
 
     document.getElementById("computerChoice").innerText =
-        "Computer: " + computerChoice;
+        "Computer Choice: " + computerChoice;
 
-    document.getElementById("result").innerText =
-        result;
+    document.getElementById("result").innerText = result;
 }
